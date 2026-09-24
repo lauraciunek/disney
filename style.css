@@ -1,0 +1,953 @@
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #050b1c;
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.header {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    padding: 22px 7%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    z-index: 1000;
+
+    background: rgba(4, 9, 25, 0.75);
+
+    backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.logo,
+.footer-logo {
+    font-family: "Cinzel", serif;
+
+    font-size: 25px;
+
+    font-weight: 600;
+
+    color: #f6d77a;
+
+    letter-spacing: 1px;
+}
+
+.header nav {
+    display: flex;
+    gap: 35px;
+}
+
+.header nav a {
+    font-size: 13px;
+
+    color: #d7dbea;
+
+    transition: 0.3s;
+}
+
+.header nav a:hover {
+    color: #f6d77a;
+}
+
+.header-btn {
+    padding: 11px 22px;
+
+    border: 1px solid #f6d77a;
+
+    border-radius: 30px;
+
+    color: #f6d77a;
+
+    font-size: 12px;
+
+    transition: 0.3s;
+}
+
+.header-btn:hover {
+    background: #f6d77a;
+    color: #050b1c;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+    height: 100vh;
+
+    min-height: 700px;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            rgba(38, 70, 160, 0.35),
+            transparent 40%
+        ),
+        linear-gradient(
+            180deg,
+            #020617 0%,
+            #081333 60%,
+            #050b1c 100%
+        );
+}
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 800px;
+    height: 800px;
+
+    border-radius: 50%;
+
+    background: rgba(49, 87, 190, 0.15);
+
+    filter: blur(80px);
+}
+
+.hero-content {
+    position: relative;
+
+    max-width: 850px;
+
+    padding: 20px;
+
+    z-index: 2;
+}
+
+.small-title,
+.section-title > span,
+.movies-text > span,
+.character-info span,
+.castle-content > span {
+    color: #f6d77a;
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    font-weight: 500;
+}
+
+.hero h1 {
+    margin-top: 20px;
+
+    font-family: "Cinzel", serif;
+
+    font-size: clamp(55px, 8vw, 100px);
+
+    line-height: 1.05;
+
+    font-weight: 600;
+}
+
+.hero h1 span {
+    color: #f6d77a;
+
+    text-shadow:
+        0 0 20px rgba(246, 215, 122, 0.3);
+}
+
+.hero p {
+    max-width: 650px;
+
+    margin: 30px auto;
+
+    color: #bdc6df;
+
+    font-size: 15px;
+
+    line-height: 1.9;
+}
+
+.hero-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    margin-top: 35px;
+}
+
+.primary-btn {
+    display: inline-block;
+
+    padding: 15px 28px;
+
+    background: linear-gradient(
+        135deg,
+        #f8df91,
+        #d5a93e
+    );
+
+    color: #10182f;
+
+    border-radius: 30px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+
+    box-shadow:
+        0 10px 30px rgba(214, 172, 64, 0.2);
+}
+
+.primary-btn:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 35px rgba(214, 172, 64, 0.35);
+}
+
+.secondary-btn {
+    padding: 14px 27px;
+
+    border: 1px solid rgba(255,255,255,0.25);
+
+    border-radius: 30px;
+
+    font-size: 12px;
+
+    color: #fff;
+
+    transition: 0.3s;
+}
+
+.secondary-btn:hover {
+    border-color: #f6d77a;
+
+    color: #f6d77a;
+}
+
+.scroll {
+    position: absolute;
+
+    bottom: 30px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    color: #65708f;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+
+/* =====================================================
+   ESTRELAS
+===================================================== */
+
+.stars,
+.stars::before,
+.stars::after {
+    position: absolute;
+
+    width: 3px;
+    height: 3px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    box-shadow:
+        80px 80px #fff,
+        180px 150px #fff,
+        280px 60px #f6d77a,
+        390px 210px #fff,
+        500px 100px #fff,
+        620px 260px #f6d77a,
+        740px 120px #fff,
+        850px 300px #fff,
+        950px 80px #fff,
+        1100px 200px #f6d77a,
+        1200px 100px #fff,
+        1300px 300px #fff,
+        1400px 150px #fff,
+        1500px 250px #f6d77a;
+}
+
+.stars {
+    opacity: 0.4;
+}
+
+
+/* =====================================================
+   SEÇÕES
+===================================================== */
+
+.magic-section,
+.parks-section {
+    padding: 130px 8%;
+
+    background: #f7f5ef;
+
+    color: #0a1430;
+}
+
+.section-title {
+    max-width: 650px;
+
+    margin: 0 auto 70px;
+
+    text-align: center;
+}
+
+.section-title h2 {
+    margin: 18px 0;
+
+    font-family: "Cinzel", serif;
+
+    font-size: clamp(35px, 5vw, 58px);
+
+    line-height: 1.15;
+}
+
+.section-title strong {
+    color: #b88925;
+}
+
+.section-title p {
+    color: #667087;
+
+    font-size: 14px;
+
+    line-height: 1.9;
+}
+
+
+/* =====================================================
+   MAGIC CARDS
+===================================================== */
+
+.magic-cards {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.magic-card {
+    padding: 45px 35px;
+
+    border-radius: 20px;
+
+    background: white;
+
+    border: 1px solid #e9e5da;
+
+    transition: 0.4s;
+}
+
+.magic-card:hover {
+    transform: translateY(-10px);
+
+    box-shadow:
+        0 25px 60px rgba(23, 31, 57, 0.12);
+}
+
+.magic-card.featured {
+    background: #0a1430;
+
+    color: white;
+
+    transform: translateY(-15px);
+
+    box-shadow:
+        0 30px 60px rgba(5, 12, 35, 0.2);
+}
+
+.magic-card.featured:hover {
+    transform: translateY(-25px);
+}
+
+.icon {
+    font-size: 35px;
+
+    margin-bottom: 25px;
+}
+
+.magic-card h3 {
+    font-family: "Cinzel", serif;
+
+    font-size: 25px;
+
+    margin-bottom: 15px;
+}
+
+.magic-card p {
+    color: #7b8190;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+
+    margin-bottom: 25px;
+}
+
+.magic-card.featured p {
+    color: #adb5ca;
+}
+
+.magic-card a {
+    color: #b88925;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   PERSONAGENS
+===================================================== */
+
+.characters-section {
+    padding: 130px 8%;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #162a61,
+            #050b1c 70%
+        );
+}
+
+.light h2 {
+    color: white;
+}
+
+.light p {
+    color: #aeb8d0;
+}
+
+.characters {
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.character {
+    height: 500px;
+
+    position: relative;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    background-size: cover;
+
+    background-position: center;
+
+    transition: 0.5s;
+}
+
+.character::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            transparent 35%,
+            rgba(2, 7, 20, 0.95)
+        );
+}
+
+.character:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,0.4);
+}
+
+.mickey {
+    background:
+        linear-gradient(
+            135deg,
+            #182c63,
+            #050914
+        );
+}
+
+.princess {
+    background:
+        linear-gradient(
+            135deg,
+            #6e385f,
+            #160b22
+        );
+}
+
+.heroes {
+    background:
+        linear-gradient(
+            135deg,
+            #214f73,
+            #06111e
+        );
+}
+
+.character-info {
+    position: relative;
+
+    z-index: 2;
+
+    padding: 35px;
+}
+
+.character-info h3 {
+    font-family: "Cinzel", serif;
+
+    font-size: 35px;
+
+    margin: 10px 0;
+}
+
+.character-info p {
+    color: #c1c8d7;
+
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   FILMES
+===================================================== */
+
+.movies-section {
+    padding: 130px 8%;
+
+    display: grid;
+
+    grid-template-columns: 0.8fr 1.2fr;
+
+    gap: 80px;
+
+    align-items: center;
+
+    background: #f7f5ef;
+
+    color: #0a1430;
+}
+
+.movies-text h2 {
+    font-family: "Cinzel", serif;
+
+    font-size: 55px;
+
+    line-height: 1.15;
+
+    margin: 20px 0;
+}
+
+.movies-text strong {
+    color: #b88925;
+}
+
+.movies-text p {
+    max-width: 450px;
+
+    color: #6d7484;
+
+    font-size: 14px;
+
+    line-height: 1.9;
+
+    margin-bottom: 30px;
+}
+
+.movie-cards {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 15px;
+}
+
+.movie-card {
+    height: 420px;
+
+    padding: 25px;
+
+    border-radius: 18px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-end;
+
+    color: white;
+
+    overflow: hidden;
+
+    position: relative;
+
+    background: linear-gradient(
+        160deg,
+        #1b3f72,
+        #070c1c
+    );
+
+    transition: 0.4s;
+}
+
+.movie-card:hover {
+    transform: translateY(-10px);
+}
+
+.movie-card::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            transparent 40%,
+            rgba(0,0,0,0.85)
+        );
+}
+
+.movie-card span,
+.movie-card h3 {
+    position: relative;
+
+    z-index: 2;
+}
+
+.movie-card span {
+    color: #f6d77a;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+}
+
+.movie-card h3 {
+    font-family: "Cinzel", serif;
+
+    font-size: 23px;
+
+    margin-top: 8px;
+}
+
+.movie-two {
+    background:
+        linear-gradient(
+            160deg,
+            #397b99,
+            #0a1724
+        );
+}
+
+.movie-three {
+    background:
+        linear-gradient(
+            160deg,
+            #638db7,
+            #16204a
+        );
+}
+
+
+/* =====================================================
+   PARQUES
+===================================================== */
+
+.castle {
+    max-width: 1200px;
+
+    height: 550px;
+
+    margin: auto;
+
+    border-radius: 25px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(3, 9, 28, 0.9),
+            rgba(5, 10, 25, 0.2)
+        ),
+        linear-gradient(
+            135deg,
+            #1d3774,
+            #091127
+        );
+}
+
+.castle::after {
+    content: "✦";
+
+    position: absolute;
+
+    right: 15%;
+
+    top: 15%;
+
+    font-size: 100px;
+
+    color: #f6d77a;
+
+    opacity: 0.5;
+
+    text-shadow:
+        0 0 50px #f6d77a;
+}
+
+.castle-content {
+    position: relative;
+
+    z-index: 2;
+
+    padding: 100px;
+
+    max-width: 650px;
+
+    color: white;
+}
+
+.castle-content h2 {
+    font-family: "Cinzel", serif;
+
+    font-size: 55px;
+
+    line-height: 1.15;
+
+    margin: 20px 0 35px;
+}
+
+
+/* =====================================================
+   FRASE
+===================================================== */
+
+.quote-section {
+    padding: 150px 20px;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle,
+            #172a63,
+            #050b1c 70%
+        );
+}
+
+.quote-stars {
+    color: #f6d77a;
+
+    font-size: 35px;
+
+    margin-bottom: 30px;
+}
+
+.quote-section h2 {
+    font-family: "Cinzel", serif;
+
+    font-size: clamp(35px, 5vw, 60px);
+
+    line-height: 1.25;
+}
+
+.quote-section h2 span {
+    color: #f6d77a;
+}
+
+.quote-section p {
+    color: #8893ae;
+
+    margin-top: 25px;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+    padding: 60px 20px;
+
+    text-align: center;
+
+    background: #020611;
+
+    color: #68728b;
+}
+
+.footer-logo {
+    margin-bottom: 15px;
+}
+
+.footer-line {
+    width: 100px;
+
+    height: 1px;
+
+    background: #26304a;
+
+    margin: 25px auto;
+}
+
+footer p {
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   RESPONSIVIDADE
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .header nav {
+        display: none;
+    }
+
+    .magic-cards,
+    .characters {
+        grid-template-columns: 1fr;
+    }
+
+    .magic-card.featured {
+        transform: none;
+    }
+
+    .movies-section {
+        grid-template-columns: 1fr;
+    }
+
+    .movie-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .castle-content {
+        padding: 50px;
+    }
+
+    .castle-content h2 {
+        font-size: 40px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .header {
+        padding: 18px 5%;
+    }
+
+    .header-btn {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 50px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+        width: 100%;
+    }
+
+    .character {
+        height: 400px;
+    }
+
+    .movies-text h2 {
+        font-size: 40px;
+    }
+
+    .castle {
+        height: 450px;
+    }
+
+    .castle-content {
+        padding: 35px;
+    }
+}
