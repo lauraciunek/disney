@@ -1,212 +1,32 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
-    font-family: Arial, sans-serif;
-    background: #07152d;
-    color: white;
-}
-
-/* MENU */
-
-header {
-    height: 70px;
-    padding: 0 8%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-header h2,
-footer h3 {
-    color: white;
-}
-
-header span,
-footer span {
-    color: #4da9ff;
-}
-
-nav {
-    display: flex;
-    gap: 25px;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-}
-
-nav a:hover {
-    color: #4da9ff;
-}
-
-
-/* INÍCIO */
-
-.hero {
-    min-height: 90vh;
-    padding: 100px 10%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    background: linear-gradient(
-        120deg,
-        #020817,
-        #12457c
-    );
-}
-
-.hero p:first-child {
-    color: #4da9ff;
-    font-size: 13px;
-}
-
-.hero h1 {
-    font-size: 60px;
-    margin: 15px 0;
-}
-
-.texto {
-    color: #b8c5d5;
-    max-width: 450px;
-    line-height: 1.6;
-}
-
-.botao {
-    display: inline-block;
-    margin-top: 25px;
-    padding: 13px 25px;
-    background: #3495e8;
-    color: white;
-    text-decoration: none;
-    border-radius: 25px;
-}
-
-.botao:hover {
-    background: #65baff;
-}
-
-.estrela {
-    font-size: 180px;
-}
-
-
-/* PERSONAGENS */
-
-section:not(.hero) {
-    padding: 80px 10%;
-}
-
-section h2 {
-    margin-bottom: 35px;
-}
-
-.cards {
-    display: flex;
-    gap: 25px;
-}
-
-.card {
-    flex: 1;
-    background: #0e2648;
-    padding-bottom: 25px;
-    border-radius: 15px;
-    overflow: hidden;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-}
-
-.imagem {
-    height: 180px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 80px;
-    background: #173c68;
-}
-
-.card h3,
-.card p {
-    margin: 15px 20px 0;
-}
-
-.card p {
-    color: #aab8c9;
-    font-size: 14px;
-    line-height: 1.5;
-}
-
-
-/* FILMES */
-
-.filmes {
-    background: #0a1e3a;
-}
-
-.filmes-lista {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.filmes-lista div {
-    padding: 50px 30px;
-    flex: 1;
-    min-width: 150px;
+    background-color: rgb(225, 155, 214);
     text-align: center;
-    border-radius: 12px;
-    background: #153b68;
+}
+
+h1 {
+    font-style: italic;
     font-weight: bold;
+    color: rgb(246, 246, 232);
 }
 
+h2 {
+    font-style: italic;
+    color: rgb(243, 239, 236);
+}
 
-/* RODAPÉ */
-
-footer {
-    padding: 40px;
+.img1 {
+    width: 50%;
     text-align: center;
-    background: #020914;
 }
 
-footer p {
-    color: #8999ad;
-    margin-top: 10px;
+h3 {
+    font-style: italic;
+    color: rgb(255, 254, 254);
 }
 
-
-/* CELULAR */
-
-@media (max-width: 700px) {
-
-    nav {
-        display: none;
-    }
-
-    .hero {
-        text-align: center;
-        justify-content: center;
-    }
-
-    .hero h1 {
-        font-size: 42px;
-    }
-
-    .estrela {
-        display: none;
-    }
-
-    .cards {
-        flex-direction: column;
-    }
-
-    .filmes-lista {
-        flex-direction: column;
-    }
+.lista {
+    text-align: left;
+    font-style: italic;
+    text-decoration: overline;
+    color: ghostwhite;
 }
