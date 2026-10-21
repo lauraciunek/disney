@@ -24,6 +24,16 @@ h3 {
     color: rgb(246, 234, 129);
 }
 
+h4 {
+    font-style: italic;
+    color: rgb(246,234,129);
+}
+
+h5 {
+    font-style: italic;
+    color: rgb(246,234,129);
+}
+
 .lista {
     text-align: left;
     font-style: italic;
