@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(216, 168, 209);
+    background-color: rgb(173, 113, 164);
     text-align: center;
 }
 
@@ -16,7 +16,7 @@ h2 {
 
 .img1 {
     width: 40%;
-    text-align: center;
+    text-align: left;
 }
 
 h3 {
@@ -35,8 +35,9 @@ h5 {
 }
 
 .lista {
-    text-align: left;
-    font-style: italic;
+    text-size-adjust: calc(40) ;
+    text-align: center;
+    font-style: radon;
     text-decoration: overline;
     color: rgb(246, 234, 129);
 }
