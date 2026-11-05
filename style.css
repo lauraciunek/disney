@@ -32,11 +32,12 @@ h4 {
 h5 {
     font-style: italic;
     color: rgb(246,234,129);
+    text-size-adjust: calc(50);
 }
 
 .lista {
     text-size-adjust: calc(40) ;
-    text-align: center;
+    text-align: left;
     font-style: radon;
     text-decoration: overline;
     color: rgb(246, 234, 129);
