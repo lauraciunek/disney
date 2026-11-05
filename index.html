@@ -31,89 +31,100 @@
     <li> Frozen </li>
     </ul>
 
+
 <!-- ÁREA MÁGICA DAS PRINCESAS -->
 <section class="princesas-magicas">
 
-    <button class="princesa" data-historia="rapunzel">
-        👑
+    <button class="princesa" data-historia="rapunzel" aria-label="Rapunzel">
+        🦎
     </button>
 
-    <button class="princesa" data-historia="bela">
-        🌹
+    <button class="princesa" data-historia="bela" aria-label="Bela">
+        📖
     </button>
 
-    <button class="princesa" data-historia="aurora">
-        🩷
+    <button class="princesa" data-historia="aurora" aria-label="Aurora">
+        👗
     </button>
 
-    <button class="princesa" data-historia="ariel">
-        🧜‍♀️
+    <button class="princesa" data-historia="ariel" aria-label="Ariel">
+        🐚
     </button>
 
-    <button class="princesa" data-historia="tiana">
+    <button class="princesa" data-historia="tiana" aria-label="Tiana">
         🐸
     </button>
 
-    <button class="princesa" data-historia="branca">
+    <button class="princesa" data-historia="branca" aria-label="Branca de Neve">
         🍎
     </button>
 
-    <button class="princesa" data-historia="cinderela">
+    <button class="princesa" data-historia="cinderela" aria-label="Cinderela">
         👠
     </button>
 
-    <button class="princesa" data-historia="elsa">
+    <button class="princesa" data-historia="elsa" aria-label="Elsa">
         ❄️
     </button>
 
-    <button class="princesa" data-historia="moana">
-        🌺
+    <button class="princesa" data-historia="moana" aria-label="Moana">
+        🌊
     </button>
 
-    <button class="princesa" data-historia="jasmine">
-        🪔
+    <button class="princesa" data-historia="jasmine" aria-label="Jasmine">
+        🪄
     </button>
 
-    <button class="princesa" data-historia="merida">
+    <button class="princesa" data-historia="merida" aria-label="Merida">
         🏹
     </button>
 
-    <button class="princesa" data-historia="mulan">
+    <button class="princesa" data-historia="mulan" aria-label="Mulan">
         🐉
     </button>
 
 </section>
 
+
 <!-- CAIXINHA DAS HISTÓRIAS -->
 <div id="historia-princesa" class="historia-princesa">
-    <button id="fechar-historia" class="fechar-historia">×</button>
+
+    <button id="fechar-historia" class="fechar-historia">
+        ×
+    </button>
+
     <h2 id="titulo-historia"></h2>
+
     <p id="texto-historia"></p>
+
 </div>
+
 
 <!-- EFEITO DE BRILHINHOS -->
 <div id="brilhos-disney"></div>
 
+
 <script>
+
 const historias = {
 
     rapunzel: {
-        titulo: "🌸 Enrolados",
-        texto: "Rapunzel é uma jovem princesa que passou a vida inteira presa em uma torre, sem conhecer o mundo. Com seus longos cabelos mágicos, ela embarca em uma aventura inesquecível ao lado de Flynn Rider para descobrir a verdade sobre sua origem."
+        titulo: "🦎 Enrolados",
+        texto: "Rapunzel é uma jovem princesa que passou a vida inteira presa em uma torre, sem conhecer o mundo. Com seus longos cabelos mágicos, ela embarca em uma aventura inesquecível ao lado de Flynn Rider e de seu fiel camaleão Pascal para descobrir a verdade sobre sua origem."
     },
 
     bela: {
-        titulo: "🌹 A Bela e a Fera",
+        titulo: "📖 A Bela e a Fera",
         texto: "Bela é uma jovem inteligente e apaixonada por livros que acaba vivendo em um castelo encantado. Lá, conhece uma Fera que esconde um coração bondoso. Juntos, eles descobrem que a verdadeira beleza está no interior."
     },
 
     aurora: {
-        titulo: "💗 A Bela Adormecida",
+        titulo: "👗 A Bela Adormecida",
         texto: "A princesa Aurora recebe uma maldição da fada Malévola e está destinada a cair em um sono profundo. Com a ajuda das três fadas e do amor verdadeiro, seu destino pode mudar."
     },
 
     ariel: {
-        titulo: "🧜‍♀️ A Pequena Sereia",
+        titulo: "🐚 A Pequena Sereia",
         texto: "Ariel é uma sereia curiosa que sonha em conhecer o mundo dos humanos. Ao se apaixonar pelo príncipe Eric, ela faz um acordo com Úrsula para conseguir pernas e viver uma grande aventura fora do mar."
     },
 
@@ -138,13 +149,13 @@ const historias = {
     },
 
     moana: {
-        titulo: "🌺 Moana",
+        titulo: "🌊 Moana",
         texto: "Moana é uma jovem corajosa que decide atravessar o oceano para salvar seu povo. Ao lado do semideus Maui, ela enfrenta desafios e descobre sua verdadeira identidade."
     },
 
     jasmine: {
-        titulo: "🪔 Aladdin",
-        texto: "Jasmine é uma princesa independente que deseja escolher seu próprio destino. Ao conhecer Aladdin, ela vive uma aventura envolvendo um gênio mágico, uma lâmpada encantada e muitos desafios."
+        titulo: "🪄 Aladdin",
+        texto: "Jasmine é uma princesa independente que deseja escolher seu próprio destino. Ao conhecer Aladdin, ela vive uma aventura envolvendo um gênio mágico, uma lâmpada encantada e um tapete voador."
     },
 
     merida: {
@@ -159,7 +170,11 @@ const historias = {
 
 };
 
+
+// ABRIR HISTÓRIAS
+
 const botoesPrincesas = document.querySelectorAll(".princesa");
+
 const caixaHistoria = document.getElementById("historia-princesa");
 
 botoesPrincesas.forEach(botao => {
@@ -167,6 +182,7 @@ botoesPrincesas.forEach(botao => {
     botao.addEventListener("click", () => {
 
         const princesa = botao.dataset.historia;
+
         const historia = historias[princesa];
 
         document.getElementById("titulo-historia").textContent =
@@ -181,18 +197,23 @@ botoesPrincesas.forEach(botao => {
 
 });
 
+
+// FECHAR HISTÓRIAS
+
 document.getElementById("fechar-historia").addEventListener("click", () => {
+
     caixaHistoria.classList.remove("mostrar");
+
 });
 
 
-// BRILHINHOS MÁGICOS AO ENTRAR NO SITE
+// BRILHINHOS MÁGICOS NA ENTRADA DO SITE
 
 window.addEventListener("load", () => {
 
     const areaBrilhos = document.getElementById("brilhos-disney");
 
-    for (let i = 0; i < 45; i++) {
+    for (let i = 0; i < 60; i++) {
 
         const brilho = document.createElement("span");
 
@@ -201,20 +222,27 @@ window.addEventListener("load", () => {
         brilho.innerHTML = Math.random() > 0.5 ? "✦" : "✨";
 
         brilho.style.left = Math.random() * 100 + "vw";
+
         brilho.style.top = Math.random() * 100 + "vh";
 
-        brilho.style.animationDelay = Math.random() * 1.5 + "s";
+        brilho.style.animationDelay = Math.random() * 2 + "s";
 
         areaBrilhos.appendChild(brilho);
 
     }
 
+    // Os brilhinhos desaparecem depois de 8 segundos
+
     setTimeout(() => {
+
         areaBrilhos.innerHTML = "";
-    }, 3500);
+
+    }, 8000);
 
 });
+
 </script>
+
 
     <footer>
         disneyworld

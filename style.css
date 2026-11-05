@@ -43,6 +43,7 @@ h5 {
     color: rgb(246, 234, 129);
 }
 
+
 /* PRINCESAS ESPALHADAS PELA TELA */
 
 .princesas-magicas {
@@ -57,29 +58,44 @@ h5 {
 }
 
 .princesa {
-    background: rgba(255, 255, 255, 0.75);
+    background: rgba(255, 255, 255, 0.85);
     border: 1px solid #f5c6dc;
     border-radius: 50%;
-    width: 42px;
-    height: 42px;
-    font-size: 21px;
+
+    width: 48px;
+    height: 48px;
+
+    font-size: 25px;
     cursor: pointer;
-    box-shadow: 0 0 12px #f7c6df;
-    transition: 0.3s ease;
+
+    /* Sem brilho nos emojis */
+    box-shadow: none;
+    text-shadow: none;
+
+    transition: transform 0.3s ease,
+                background 0.3s ease;
+
     animation: flutuar 3s infinite ease-in-out;
 }
 
 .princesa:hover {
-    transform: scale(1.35) rotate(10deg);
-    box-shadow: 0 0 20px #f3a9d0;
+    transform: scale(1.3) rotate(8deg);
+
     background: #fff0f8;
+
+    /* Sem efeito luminoso */
+    box-shadow: none;
 }
 
 .princesa:nth-child(even) {
     animation-delay: 1s;
 }
 
+
+/* ANIMAÇÃO DE FLUTUAÇÃO */
+
 @keyframes flutuar {
+
     0%, 100% {
         transform: translateY(0);
     }
@@ -87,6 +103,7 @@ h5 {
     50% {
         transform: translateY(-10px);
     }
+
 }
 
 
@@ -94,50 +111,80 @@ h5 {
 
 .historia-princesa {
     display: none;
+
     position: fixed;
+
     top: 50%;
     left: 50%;
+
     transform: translate(-50%, -50%);
+
     width: 80%;
     max-width: 420px;
+
     padding: 30px;
-    background: linear-gradient(135deg, #fff5fa, #fce1ef);
+
+    background: linear-gradient(
+        135deg,
+        #fff5fa,
+        #fce1ef
+    );
+
     border: 2px solid #eeb5d0;
+
     border-radius: 22px;
+
     box-shadow: 0 0 35px rgba(220, 130, 180, 0.4);
+
     text-align: center;
+
     z-index: 1000;
+
     color: #925875;
 }
 
 .historia-princesa.mostrar {
     display: block;
+
     animation: aparecer 0.4s ease;
 }
 
 .historia-princesa h2 {
     font-size: 23px;
+
     color: #b75c8b;
+
     margin-bottom: 15px;
 }
 
 .historia-princesa p {
     font-size: 15px;
+
     line-height: 1.8;
 }
 
 .fechar-historia {
     position: absolute;
+
     top: 8px;
     right: 15px;
+
     border: none;
+
     background: transparent;
+
     color: #b75c8b;
+
     font-size: 28px;
+
     cursor: pointer;
 }
 
+
+/* ANIMAÇÃO DA CAIXINHA */
+
 @keyframes aparecer {
+
     from {
         opacity: 0;
         transform: translate(-50%, -45%);
@@ -147,47 +194,68 @@ h5 {
         opacity: 1;
         transform: translate(-50%, -50%);
     }
+
 }
 
 
-/* BRILHINHOS NA ENTRADA DO SITE */
+/* BRILHINHOS MÁGICOS NA ENTRADA */
 
 #brilhos-disney {
     position: fixed;
+
     inset: 0;
+
     pointer-events: none;
-    z-index: 9999;
+
+    z-index: 4;
+
     overflow: hidden;
 }
 
 .brilho-magico {
     position: absolute;
+
     color: #f5b8d8;
-    font-size: 17px;
-    text-shadow: 0 0 10px #ffb6dc, 0 0 20px white;
-    animation: brilho-aparecer 3s ease forwards;
+
+    font-size: 19px;
+
+    text-shadow:
+        0 0 10px #ffb6dc,
+        0 0 20px white;
+
+    animation: brilho-aparecer 6s ease forwards;
 }
 
+
+/* ANIMAÇÃO MAIS LONGA DOS BRILHOS */
+
 @keyframes brilho-aparecer {
+
     0% {
         opacity: 0;
         transform: scale(0) rotate(0deg);
     }
 
-    30% {
+    20% {
         opacity: 1;
         transform: scale(1.4) rotate(90deg);
     }
 
-    70% {
+    50% {
         opacity: 1;
         transform: scale(1) rotate(180deg);
+    }
+
+    80% {
+        opacity: 0.8;
+        transform: scale(1.2) rotate(270deg);
     }
 
     100% {
         opacity: 0;
         transform: scale(0) rotate(360deg);
     }
+
 }
 
 
@@ -201,15 +269,16 @@ h5 {
     }
 
     .princesa {
-        width: 38px;
-        height: 38px;
-        font-size: 19px;
+        width: 42px;
+        height: 42px;
+
+        font-size: 22px;
     }
 
     .historia-princesa {
         width: 82%;
+
         padding: 25px 20px;
     }
 
 }
-
