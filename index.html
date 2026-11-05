@@ -30,6 +30,192 @@
     <li> Cinderela </li>
     <li> Frozen </li>
     </ul>
+
+<!-- ÁREA MÁGICA DAS PRINCESAS -->
+<section class="princesas-magicas">
+
+    <button class="princesa" data-historia="rapunzel">
+        👑
+    </button>
+
+    <button class="princesa" data-historia="bela">
+        🌹
+    </button>
+
+    <button class="princesa" data-historia="aurora">
+        🩷
+    </button>
+
+    <button class="princesa" data-historia="ariel">
+        🧜‍♀️
+    </button>
+
+    <button class="princesa" data-historia="tiana">
+        🐸
+    </button>
+
+    <button class="princesa" data-historia="branca">
+        🍎
+    </button>
+
+    <button class="princesa" data-historia="cinderela">
+        👠
+    </button>
+
+    <button class="princesa" data-historia="elsa">
+        ❄️
+    </button>
+
+    <button class="princesa" data-historia="moana">
+        🌺
+    </button>
+
+    <button class="princesa" data-historia="jasmine">
+        🪔
+    </button>
+
+    <button class="princesa" data-historia="merida">
+        🏹
+    </button>
+
+    <button class="princesa" data-historia="mulan">
+        🐉
+    </button>
+
+</section>
+
+<!-- CAIXINHA DAS HISTÓRIAS -->
+<div id="historia-princesa" class="historia-princesa">
+    <button id="fechar-historia" class="fechar-historia">×</button>
+    <h2 id="titulo-historia"></h2>
+    <p id="texto-historia"></p>
+</div>
+
+<!-- EFEITO DE BRILHINHOS -->
+<div id="brilhos-disney"></div>
+
+<script>
+const historias = {
+
+    rapunzel: {
+        titulo: "🌸 Enrolados",
+        texto: "Rapunzel é uma jovem princesa que passou a vida inteira presa em uma torre, sem conhecer o mundo. Com seus longos cabelos mágicos, ela embarca em uma aventura inesquecível ao lado de Flynn Rider para descobrir a verdade sobre sua origem."
+    },
+
+    bela: {
+        titulo: "🌹 A Bela e a Fera",
+        texto: "Bela é uma jovem inteligente e apaixonada por livros que acaba vivendo em um castelo encantado. Lá, conhece uma Fera que esconde um coração bondoso. Juntos, eles descobrem que a verdadeira beleza está no interior."
+    },
+
+    aurora: {
+        titulo: "💗 A Bela Adormecida",
+        texto: "A princesa Aurora recebe uma maldição da fada Malévola e está destinada a cair em um sono profundo. Com a ajuda das três fadas e do amor verdadeiro, seu destino pode mudar."
+    },
+
+    ariel: {
+        titulo: "🧜‍♀️ A Pequena Sereia",
+        texto: "Ariel é uma sereia curiosa que sonha em conhecer o mundo dos humanos. Ao se apaixonar pelo príncipe Eric, ela faz um acordo com Úrsula para conseguir pernas e viver uma grande aventura fora do mar."
+    },
+
+    tiana: {
+        titulo: "🐸 A Princesa e o Sapo",
+        texto: "Tiana é uma jovem trabalhadora que sonha em abrir seu próprio restaurante. Sua vida muda completamente quando conhece um príncipe transformado em sapo. Juntos, eles vivem uma aventura cheia de magia e descobertas."
+    },
+
+    branca: {
+        titulo: "🍎 Branca de Neve",
+        texto: "Branca de Neve é uma princesa gentil que precisa fugir da invejosa Rainha Má. Ela encontra abrigo na casa dos sete anões, mas uma maçã envenenada coloca sua vida em perigo."
+    },
+
+    cinderela: {
+        titulo: "👠 Cinderela",
+        texto: "Cinderela vive uma vida difícil ao lado de sua madrasta e suas irmãs postiças. Com a ajuda de sua Fada Madrinha, ela consegue ir ao baile real, onde conhece o príncipe e deixa para trás um sapatinho de cristal."
+    },
+
+    elsa: {
+        titulo: "❄️ Frozen",
+        texto: "Elsa nasceu com poderes mágicos de gelo e neve. Com medo de machucar as pessoas que ama, ela se afasta de todos. Sua irmã Anna embarca em uma jornada para encontrá-la e mostrar a força do amor entre irmãs."
+    },
+
+    moana: {
+        titulo: "🌺 Moana",
+        texto: "Moana é uma jovem corajosa que decide atravessar o oceano para salvar seu povo. Ao lado do semideus Maui, ela enfrenta desafios e descobre sua verdadeira identidade."
+    },
+
+    jasmine: {
+        titulo: "🪔 Aladdin",
+        texto: "Jasmine é uma princesa independente que deseja escolher seu próprio destino. Ao conhecer Aladdin, ela vive uma aventura envolvendo um gênio mágico, uma lâmpada encantada e muitos desafios."
+    },
+
+    merida: {
+        titulo: "🏹 Valente",
+        texto: "Merida é uma princesa aventureira que não quer seguir as tradições de seu reino. Ao tentar mudar seu destino, ela acaba colocando sua família em perigo e precisa descobrir o verdadeiro significado do amor e da coragem."
+    },
+
+    mulan: {
+        titulo: "🐉 Mulan",
+        texto: "Mulan é uma jovem determinada que decide se disfarçar de homem para ocupar o lugar de seu pai no exército chinês. Com coragem e inteligência, ela prova que pode ser uma grande heroína."
+    }
+
+};
+
+const botoesPrincesas = document.querySelectorAll(".princesa");
+const caixaHistoria = document.getElementById("historia-princesa");
+
+botoesPrincesas.forEach(botao => {
+
+    botao.addEventListener("click", () => {
+
+        const princesa = botao.dataset.historia;
+        const historia = historias[princesa];
+
+        document.getElementById("titulo-historia").textContent =
+            historia.titulo;
+
+        document.getElementById("texto-historia").textContent =
+            historia.texto;
+
+        caixaHistoria.classList.add("mostrar");
+
+    });
+
+});
+
+document.getElementById("fechar-historia").addEventListener("click", () => {
+    caixaHistoria.classList.remove("mostrar");
+});
+
+
+// BRILHINHOS MÁGICOS AO ENTRAR NO SITE
+
+window.addEventListener("load", () => {
+
+    const areaBrilhos = document.getElementById("brilhos-disney");
+
+    for (let i = 0; i < 45; i++) {
+
+        const brilho = document.createElement("span");
+
+        brilho.classList.add("brilho-magico");
+
+        brilho.innerHTML = Math.random() > 0.5 ? "✦" : "✨";
+
+        brilho.style.left = Math.random() * 100 + "vw";
+        brilho.style.top = Math.random() * 100 + "vh";
+
+        brilho.style.animationDelay = Math.random() * 1.5 + "s";
+
+        areaBrilhos.appendChild(brilho);
+
+    }
+
+    setTimeout(() => {
+        areaBrilhos.innerHTML = "";
+    }, 3500);
+
+});
+</script>
+
     <footer>
         disneyworld
     </footer>
