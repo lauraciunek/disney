@@ -19,6 +19,11 @@ h2 {
     text-align: left;
 }
 
+.img2{
+    width: 40%;
+    text-align: right;
+}
+
 h3 {
     font-style: italic;
     color: rgb(246, 234, 129);
